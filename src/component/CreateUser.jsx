@@ -8,8 +8,7 @@ const Create = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  const userToEdit = location.state?.user; // Get the user data passed from Home
-
+  const userToEdit = location.state?.user; 
   const [inputData, setInputData] = useState({
     name: "",
     email: "",

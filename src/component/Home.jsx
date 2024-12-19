@@ -16,21 +16,27 @@ const Home = () => {
     navigate("/create", { state: { user } });
   };
 
-  const handleDelete = (userId) => {
+  const handleDelete = async (userId) => {
     if (window.confirm("Are you sure you want to delete this user?")) {
-      dispatch(deleteUser(userId));
+      try {
+        await dispatch(deleteUser(userId)); // Delete user
+       
+        dispatch(fetchUsers());
+      } catch (error) {
+        console.error("Failed to delete user:", error);
+      }
     }
   };
+  
 
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold mb-4">All Users</h1>
 
-      {/* Status Messages */}
       {status === "loading" && <p className="text-blue-500 text-lg">Loading...</p>}
       {status === "failed" && <p className="text-red-500 text-lg">Error: {error}</p>}
 
-      {/* Users Table */}
+    
       {status === "succeeded" && (
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-200 shadow rounded-md">
