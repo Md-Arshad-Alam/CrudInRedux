@@ -55,7 +55,7 @@ const Home = () => {
                   <td className="px-6 py-4 border-b text-gray-700">{user.id}</td>
                   <td className="px-6 py-4 border-b text-gray-700">{user.name}</td>
                   <td className="px-6 py-4 border-b text-gray-700">{user.email}</td>
-                  <td className="px-6 py-4 border-b text-gray-700">{user.password}</td>
+                  <td className="px-6 py-4 border-b text-gray-700">{user.pasword}</td>
                   <td className="px-6 py-4 border-b text-gray-700">
                     <div className="flex space-x-3">
                       <button
